@@ -7,13 +7,13 @@ using UnityEngine;
 
 public static class BuildWebGL
 {
-    [MenuItem("Build/WebGL (itch)")]
+    [MenuItem("Build/WebGL")]
     public static void Build()
     {
-        // Disabled compression: itch.io's CDN transparently gzip/brotli-compresses
-        // every response itself, so Unity-side compressed files (.gz/.br) get double
-        // handled and the browser connection dies ("connection was closed").
-        // Disabled keeps the files raw and lets the CDN compress on the wire.
+        // Disabled compression: most static hosts transparently gzip/brotli-compress
+        // every response themselves, so Unity-side compressed files (.gz/.br) get
+        // double handled and the browser connection dies ("connection was closed").
+        // Disabled keeps the files raw and lets the host compress on the wire.
         PlayerSettings.WebGL.compressionFormat = WebGLCompressionFormat.Disabled;
 
         string outputPath = Environment.GetEnvironmentVariable("WEBGL_OUT_PATH");

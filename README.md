@@ -1,6 +1,6 @@
 # TileFall 踏格迷阵
 
-> 一款基于 **Unity 2022.3 LTS + URP** 开发的 3D 记忆/反应类休闲小游戏，已发布到 itch.io 在线试玩。
+> 一款基于 **Unity 2022.3 LTS + URP** 开发的 3D 记忆/反应类休闲小游戏，支持 WebGL 在线试玩。
 
 ## 🎮 游戏简介
 
@@ -16,17 +16,12 @@
 ## ✨ 技术亮点
 
 - **Unity 2022.3 LTS + URP**：平衡质量档位，8×8 动态网格 + TMP 符号渲染
-- **WebGL 部署性能优化**（针对 itch.io）：
+- **WebGL 部署性能优化**：
   - 关闭 SSAO / Bloom / Tonemapping 等高开销后处理，锁定 60 FPS
   - `devicePixelRatio` 限制为 1，避免高分屏 4 倍像素渲染
   - 缓存 `Enum.GetValues`、倒计时 UI 每秒仅更新一次，降低 GC 压力
-  - 压缩格式 Disabled，兼容 itch.io CDN 透明压缩
-- **一键构建**：`Assets/Editor/BuildWebGL.cs` 提供菜单 `Build → WebGL (itch)`，自动生成可直接上传 itch 的 Gzip/无压缩产物
-
-## 🔗 在线试玩
-
-<!-- itch 链接待补充 -->
-- itch.io：<占位，上传后补充链接>
+  - 压缩格式 Disabled，兼容网页平台的透明传输压缩
+- **一键构建**：`Assets/Editor/BuildWebGL.cs` 提供菜单 `Build → WebGL`，自动生成适合网页部署的产物
 
 ## 📂 项目结构
 
